@@ -2,7 +2,7 @@ API_KEY ='AIzaSyD3TFEYAvm5ZlPdf7difrQmO4qwiZ2q_AI'
 
 // add overlay layers
 let plateLayer = new L.layerGroup();
-let earthQuakeLayer = new L.layerGroup();
+let earthquakeLayer = new L.layerGroup();
 
 // creating lists
 let overlays = {
@@ -42,7 +42,7 @@ let myMap = L.map("map", {
       center: [39.09, -106.71],
   zoom: 5.5,
     // display on load
-    layers: [geoLayer, earthQuakeLayer]
+    layers: [geoLayer, earthquakeLayer]
 });
 
 // layer control
@@ -89,7 +89,7 @@ d3.json(url).then((data) => {
     L.geoJSON(features, {
         pointToLayer: drawCircle,
         onEachFeature: bindPopUp
-    }).addTo(earthQuakeLayer);
+    }).addTo(earthquakeLayer);
 
     // setting up the legend
     let legend = L.control({position: 'bottomright'});
